@@ -89,7 +89,7 @@ function Blogs() {
   const fetchBlogs = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:3300/api/get/blogs');
+      const response = await fetch('https://api.adhyan.guru/api/get/blogs');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -130,7 +130,7 @@ function Blogs() {
       console.log("Sending delete request with ID:", selectedBlog._id);
       
       // Send the request with proper headers
-      const response = await fetch('http://localhost:3300/api/delete-blog', {
+      const response = await fetch('https://api.adhyan.guru/api/delete-blog', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -308,7 +308,7 @@ function Blogs() {
       });
       
       // Send the data to the server
-      const response = await fetch('http://localhost:3300/api/upload-blog', {
+      const response = await fetch('https://api.adhyan.guru/api/upload-blog', {
         method: 'POST',
         body: formData,
       });
@@ -378,7 +378,7 @@ function Blogs() {
       });
       
       // Send the data to the server
-      const response = await fetch('http://localhost:3300/api/update-blog', {
+      const response = await fetch('https://api.adhyan.guru/api/update-blog', {
         method: 'POST',
         body: formData,
       });

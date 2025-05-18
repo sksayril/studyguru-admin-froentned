@@ -22,7 +22,7 @@ function HeroSection() {
   useEffect(() => {
     const fetchBanners = async () => {
       try {
-        const response = await fetch('http://localhost:3300/api/get/hero-banners');
+        const response = await fetch('https://api.adhyan.guru/api/get/hero-banners');
         if (!response.ok) {
           throw new Error('Failed to fetch banners');
         }
@@ -110,7 +110,7 @@ function HeroSection() {
 
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:3300/api/upload-hero-banner', {
+      const response = await fetch('https://api.adhyan.guru/api/upload-hero-banner', {
         method: 'POST',
         body: formData,
       });
@@ -122,7 +122,7 @@ function HeroSection() {
       const result = await response.json();
       
       // Refresh banners list
-      const bannersResponse = await fetch('http://localhost:3300/api/get/hero-banners');
+      const bannersResponse = await fetch('https://api.adhyan.guru/api/get/hero-banners');
       const bannersData = await bannersResponse.json();
       setBanners(bannersData.data);
       
@@ -150,7 +150,7 @@ function HeroSection() {
 
     try {
       setDeleteLoading(true);
-      const response = await fetch('http://localhost:3300/api/delete-hero-banner', {
+      const response = await fetch('https://api.adhyan.guru/api/delete-hero-banner', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -163,7 +163,7 @@ function HeroSection() {
       }
 
       // Refresh banners list
-      const bannersResponse = await fetch('http://localhost:3300/api/get/hero-banners');
+      const bannersResponse = await fetch('https://api.adhyan.guru/api/get/hero-banners');
       const bannersData = await bannersResponse.json();
       setBanners(bannersData.data);
       

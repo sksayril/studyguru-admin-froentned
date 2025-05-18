@@ -30,7 +30,7 @@ function Sponsor() {
   // Function to fetch sponsors from API
   const fetchSponsors = async () => {
     try {
-      const response = await fetch('http://localhost:3300/api/getsponser');
+      const response = await fetch('https://api.adhyan.guru/api/getsponser');
       if (response.ok) {
         const data = await response.json();
         setSponsors(data);
@@ -80,7 +80,7 @@ function Sponsor() {
       let response;
       if (isEditMode) {
         // Update existing sponsor
-        response = await fetch('http://localhost:3300/api/update/sponser', {
+        response = await fetch('https://api.adhyan.guru/api/update/sponser', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -101,7 +101,7 @@ function Sponsor() {
           return;
         }
         
-        response = await fetch('http://localhost:3300/api/addsponser', {
+        response = await fetch('https://api.adhyan.guru/api/addsponser', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -144,7 +144,7 @@ function Sponsor() {
 
     try {
       setIsSubmitting(true);
-      const response = await fetch('http://localhost:3300/api/delete/sponser', {
+      const response = await fetch('https://api.adhyan.guru/api/delete/sponser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

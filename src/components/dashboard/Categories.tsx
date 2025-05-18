@@ -251,7 +251,7 @@ function Categories() {
   const [deletingCategory, setDeletingCategory] = useState(false);
 
   const token = localStorage.getItem('adminToken');
-  const apiBaseUrl = 'http://localhost:3300/api';
+  const apiBaseUrl = 'https://api.adhyan.guru/api';
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: contentType === 'image' 

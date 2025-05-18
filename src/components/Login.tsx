@@ -17,7 +17,7 @@ function Login({ onLogin }: LoginProps) {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:3300/users/admin/login', {
+      const response = await fetch('https://api.adhyan.guru/users/admin/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -35,7 +35,7 @@ export default function Banner() {
   const fetchQuizzes = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:3300/api/getall/quiz');
+      const response = await fetch('https://api.adhyan.guru/api/getall/quiz');
       if (!response.ok) {
         throw new Error('Failed to fetch quizzes');
       }
@@ -56,7 +56,7 @@ export default function Banner() {
       setLoading(true);
       setError('');
       
-      const response = await fetch('http://localhost:3300/api/delete/quiz', {
+      const response = await fetch('https://api.adhyan.guru/api/delete/quiz', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -128,7 +128,7 @@ export default function Banner() {
         }
       }
       
-      const response = await fetch('http://localhost:3300/api/create/quiz', {
+      const response = await fetch('https://api.adhyan.guru/api/create/quiz', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

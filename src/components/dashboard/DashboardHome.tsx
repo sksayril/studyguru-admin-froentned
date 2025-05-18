@@ -47,7 +47,7 @@ function DashboardHome() {
         setLoading(true);
         
         // Fetch updates
-        const updatesResponse = await fetch('http://localhost:3300/api/latest-updates');
+        const updatesResponse = await fetch('https://api.adhyan.guru/api/latest-updates');
         const updatesData = await updatesResponse.json();
         
         // Store the updates data for display
@@ -56,11 +56,11 @@ function DashboardHome() {
         }
         
         // Fetch banners
-        const bannersResponse = await fetch('http://localhost:3300/api/get/hero-banners');
+        const bannersResponse = await fetch('https://api.adhyan.guru/api/get/hero-banners');
         const bannersData = await bannersResponse.json();
         
         // Fetch blogs
-        const blogsResponse = await fetch('http://localhost:3300/api/get/blogs');
+        const blogsResponse = await fetch('https://api.adhyan.guru/api/get/blogs');
         const blogsData = await blogsResponse.json();
         
         // Update stats with counts
